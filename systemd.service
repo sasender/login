@@ -1,0 +1,13 @@
+[Unit]
+
+Description = login Service
+[Service]
+Environment=AUTH_API_PORT=8080
+Environment=USERS_API_ADDRESS=http://USER_ENDPOINT:8080
+ExecStart=/root/login/login
+SyslogIdentifier=login
+
+
+[Install]
+WantedBy=multi-user.target
+

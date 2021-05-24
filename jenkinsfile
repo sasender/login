@@ -10,6 +10,11 @@ pipeline {
         GO111MODULE = 'on'
     }
     stages {
+        stage('COMPILE') {
+            steps {
+                sh 'go build'
+            }
+        }
 
         stage('Download Dependencies') {
             steps {

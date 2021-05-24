@@ -6,6 +6,9 @@ pipeline {
     tools {
         go 'go-1.1'
     }
+    environment {
+        GO111MODULE = 'on'
+    }
     stages {
 
         stage('Download Dependencies') {

@@ -3,7 +3,12 @@ pipeline {
     agent {
         label 'NODEJS'
     }
-
+    tools {
+        go 'go-1.1'
+    }
+    environment {
+        GO1.11MODULE = 'ON'
+    }
     stages {
 
         stage('Download Dependencies') {

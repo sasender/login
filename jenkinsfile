@@ -1,21 +1,9 @@
-pipeline {
 
+    pipeline{
     agent {
         label 'NODEJS'
     }
-    tools {
-        go 'go-1.1'
-    }
-    environment {
-        GO111MODULE = 'on'
-    }
     stages {
-        stage('COMPILE') {
-            steps {
-                sh 'go build'
-            }
-        }
-
         stage('Download Dependencies') {
             steps {
                 sh '''
@@ -29,7 +17,6 @@ pipeline {
                 zip -r login.zip *
             '''
             }
-
         }
         stage('upload Artifacts') {
             steps {
